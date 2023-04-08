@@ -1,0 +1,44 @@
+
+/* HEADER */ 
+header {
+    width: 100%;
+    overflow: hidden;
+    background: #181818;
+    margin-bottom: 20px;
+}
+
+header .header {
+    color: #d63031;
+    font-size: 50px;
+    line-height: 100px;
+    float: left;
+
+}
+
+header nav {
+    float: right;
+    line-height: 100px;
+}
+
+header nav a {
+    display: inline-block;
+    color: #fafafa;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    border-radius: 50px;
+}
+
+header nav a:hover {
+    background: #d63031;
+    
+}
+
+body {
+    margin-top: 0;
+}
