@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/707464f25e.js" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="form-contacto.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container-header logo-nav-container-header">
+        <a href="#" class="logo-header">GIMBROS</a>
+        <span class="menu-icon">Ver menú</span>
+        <nav class="navigation">
+            <ul class="show">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Quienes somos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <div class="contact-wrapper">
+
+        <div class="contact-form">
+            <h3>Contactanos</h3>
+            <form action="">
+                <p>
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="nombre" id="Nombre">
+                </p>
+                <p>
+                    <label for="Apellido">Apellido</label>
+                    <input type="text" name="Apellido" id="Apellido">
+                </p>
+                <p>
+                    <label for="Telefono">Telefono</label>
+                    <input type="tel" name="Telefono" id="Telefono">
+                </p>
+                <p>
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="Email">
+                </p>
+                <p class="block">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" rows="3"></textarea>
+                </p>
+                <p class="block">
+                    <button type="submit">Enviar</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h4>Mas información</h4>
+            <ul>
+                <li><i class="fa-solid fa-location-dot"></i> Buenos Aires</li>
+                <li><i class="fa-solid fa-phone"></i> 11 1111 1111</li>
+                <li><i class="fa-solid fa-envelope"></i> gimnasio-salud@gmail.com</li>
+            </ul>
+            <p>
+                Somos un gimnasio enfocado en brindar la mejor atencion a nuestros clientes.
+            </p>
+            <p>gimnasioBros.com</p>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container-footer">
+        <p>Derechos reservados por @GIMBROS</p>
+    </div>
+</footer>
+
+
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="form-contacto.js"></script>
+
+</body>
+</html>
