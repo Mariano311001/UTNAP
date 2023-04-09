@@ -1,0 +1,91 @@
+/* HEADER */
+
+.container-header {
+    width: 90%;
+    max-width: 1790px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #333;
+    padding: 1rem 0;
+    margin-bottom: 6rem;
+}
+
+.header a {
+    color: #fafafa;
+    text-decoration: none;
+
+}
+
+.logo-nav-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    display: none;
+}
+
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 1rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 50px;
+}
+
+.navigation ul li a:hover {
+    background: #4a4a4a;
+}
+
+.logo-header {
+    letter-spacing: 10px;
+    font-size: 1.2em;
+
+}
+
+/*FORMULARIO*/
+
+h2 {
+	color: #6d0505;
+	font-weight: bold;
+}
+
+.form-control {
+	border: 1px solid red;
+	border-radius: 0px 5px 0px 5px;
+}
+
+.form-label {
+	color: #6d0505;
+	font-weight: bold;
+}
+
+.tamano	{
+	width: 50%;	
+}
+
+.selector{
+	border: 1px solid red;
+	height: 38px;
+	border-radius: 0px 5px 0px 5px;
+}
+
+
+
+.formPaso {
+
+}
