@@ -21,9 +21,6 @@ body {
     font-size: 3em;
 }
 
-.contact-wrapper {
-    box-shadow: 0 0 20px 0 rgba(255,255,255, .3)
-}
 
 .contact-wrapper > * {
     padding: 1em;
@@ -190,10 +187,13 @@ textarea {
 /*FOOTER*/
 .footer {
     background: #222222;
-    padding: 4rem 0;
     text-align: center;
     color: #fafafa;
     margin-top: 6rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 4rem 0;
 }
 
 
@@ -237,5 +237,16 @@ textarea {
         font-size: 1.2em;
     
     }
+
+    .footer {
+        background: #222222;
+        text-align: center;
+        color: #fafafa;
+        margin-top: 6rem;
+        position: relative;
+        width: 100%;
+    }
+    
+    
 
 }
