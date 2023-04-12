@@ -123,3 +123,15 @@ selectProvincias.addEventListener("change", e => {
     localidad(e.target.value);
 })
 
+function agregarGuion() {
+    nroTarjeta = document.getElementById("inputTarjeta").value
+
+    if(nroTarjeta.length == 4 || nroTarjeta.length == 9 ||
+        nroTarjeta.length == 14){
+      nroTarjeta += "-";
+      document.getElementById("inputTarjeta").value = nroTarjeta; 
+    }
+
+  }
+
+ 

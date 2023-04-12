@@ -42,29 +42,30 @@
         <!--PASO 1-->
         <div class="cajaPasos text-center tamano d-flex justify-content-center container">
             <form class="row justify-content-center">
-                <div class="tituloPaso mb-4">
+                <div class="tituloPaso">
                     <h2>REGISTRO</h2>
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-6 ">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputNombre">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese nombre">
                 </div>
                 <div class="col-6">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="inputApellido">
+                    <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese apellido">
                 </div>
-                <div class="col-12 mb-4">
+                <div class="col-12 ">
                     <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese correo electrónico">
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-6 ">
                     <label for="DNI" class="form-label">Documento de Identidad</label>
                     <div class="input-group">
                         <select class="selector col-3" id="tipoDNI" name="tipoDNI" title="Tipo DNI">
                             <option value="dni">DNI</option>
                             <option value="pasaporte">Pasaporte</option>
                         </select>
-                        <input class="form-control" type="number" id="numeroDNI" name="NumeroDNI" value="">
+                        <input class="form-control" type="number" id="numeroDoc" name="Numero Documento" value=""
+                            placeholder="Ingrese n° de documento">
                     </div>
                 </div>
                 <div class="col-6">
@@ -86,7 +87,7 @@
                 <div class="tituloPaso mb-4">
                     <h2>ELEGI EL PLAN</h2>
                 </div>
-                <div class="col-6 mb-4">
+                <div class="col-6">
                     <label for="sucursal" class="form-label">Elegir sucursal</label>
                     <select class="col-12 selector" id="tipoSucursal" name="tipoSucursal" title="Tipo Sucursal">
                         <option value="seleccione" selected>--Seleccione sucursal--</option>
@@ -114,14 +115,14 @@
 
         <div class="cajaPasos text-center tamano d-flex justify-content-center container">
             <form class="row justify-content-center">
-                <div class="tituloPaso mb-4">
+                <div class="tituloPaso ">
                     <h2>DATOS DE CONTACTO</h2>
                 </div>
-                <div class="mb-4 col-8">
+                <div class="col-8">
                     <label for="telefono" class="form-label">N° de teléfono</label>
                     <div class="input-group">
                         <div class="codigoArea"><label for="telefono" class="form-control bordeCodigo">+54</label></div>
-                        <input type="tel" class="form-control" id="inputTelefono">
+                        <input type="tel" class="form-control" id="inputTelefono" placeholder="Ingrese n° de telefono">
                     </div>
                 </div>
                 <div class="col-4">
@@ -131,35 +132,75 @@
                 <h5>Dirección:</h5>
                 <div class="col-5">
                     <label for="calle" class="form-label">Calle</label>
-                    <input type="text" class="form-control" id="inputCalle">
+                    <input type="text" class="form-control" id="inputCalle" placeholder="Ingrese nombre de calle">
                 </div>
                 <div class="col-2">
                     <label for="numero" class="form-label">Número</label>
-                    <input type="number" class="form-control" id="inputNumero">
+                    <input type="number" class="form-control" id="inputNumero" placeholder="N° de calle">
                 </div>
                 <div class="col-2">
                     <label for="piso" class="form-label">Piso</label>
-                    <input type="number" class="form-control" id="inputPiso">
+                    <input type="number" class="form-control" id="inputPiso" placeholder="Piso">
                 </div>
                 <div class="col-2">
                     <label for="departamento" class="form-label">Depto.</label>
-                    <input type="text" class="form-control" id="inputDepto">
+                    <input type="text" class="form-control" id="inputDepto" placeholder="Depto.">
                 </div>
-                <div class="col-4 mb-4">
+                <div class="col-4">
                     <label for="provincias" class="form-label">Provincias</label>
                     <select name="Seleccione Provincia" id="selectProvincias" class="selector">
-                        <option value="--Seleccione Provincia--" >--Seleccione Provincia--</option>
+                        <option value="--Seleccione Provincia--">--Seleccione Provincia--</option>
                     </select>
                 </div>
                 <div class="col-4">
                     <label for="localidad" class="form-label">Localidad</label>
                     <select name="Seleccione Localidad" class="selector" id="selectLocalidad">
-                        <option value="--Seleccione Localidad--" >--Seleccione Localidad--</option>
+                        <option value="--Seleccione Localidad--">--Seleccione Localidad--</option>
                     </select>
                 </div>
                 <div class="col-3">
                     <label for="cp" class="form-label">Código Postal</label>
-                    <input type="text" class="form-control" id="inputCP">
+                    <input type="text" class="form-control" id="inputCP" placeholder="Ingrese CP">
+                </div>
+            </form>
+        </div>
+
+        <!--PASO 4-->
+
+        <div class="cajaPasos text-center tamano d-flex justify-content-center container">
+            <form class="row justify-content-center">
+                <div class="tituloPaso">
+                    <h2>DATOS DE FACTURACION</h2>
+                </div>
+                <div class="col-7">
+                    <label for="tarjeta" class="form-label">Tarjeta de Crédito/Débito</label>
+                    <input type="text" class="form-control" id="inputTarjeta" oninput="agregarGuion()"
+                        placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+                </div>
+                <div class="col-4">
+                    <label for="vencimiento" class="form-label">Vencimiento</label>
+                    <input type="month" class="form-control" id="inputVencimiento">
+                </div>
+                <div class="col-2">
+                    <label for="CVV" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="inputCVV" placeholder="XXX">
+                </div>
+                <div class="col-11">
+                    <label for="titular" class="form-label">Nombre y apellido del titular</label>
+                    <input type="text" class="form-control" id="inputTitular" placeholder="Ingrese nombre y apellido">
+                </div>
+            </form>
+        </div>
+
+        <!--PASO 5-->
+
+        <div class="cajaPasos text-center tamano d-flex justify-content-center container">
+            <form class="row justify-content-center">
+                <div class="tituloPaso">
+                    <h2>CONFIRMAR</h2>
+                </div>
+                <div class="" id="confirmar">
+
                 </div>
             </form>
         </div>
