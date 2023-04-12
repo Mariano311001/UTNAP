@@ -9,7 +9,7 @@
 .header {
     background: #333;
     padding: 1rem 0;
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
 }
 
 .header a {
@@ -57,35 +57,80 @@
 
 }
 
+/*FOOTER*/
+
+.footer {
+    background: #222222;
+    text-align: center;
+    color: #fafafa;
+    margin-top: 6rem;
+    position: flex;
+    width: 100%;
+    bottom: 0;
+    padding: 4rem;
+}
+
+
 /*FORMULARIO*/
 
 h2 {
-	color: #6d0505;
-	font-weight: bold;
+    color: #6d0505;
+    font-weight: bold;
 }
 
 .form-control {
-	border: 1px solid red;
-	border-radius: 0px 5px 0px 5px;
+    border: 1px solid red;
+    border-radius: 0px 5px 0px 5px;
 }
 
 .form-label {
-	color: #6d0505;
-	font-weight: bold;
+    color: #6d0505;
+    font-weight: bold;
 }
 
-.tamano	{
-	width: 50%;	
+.tamano {
+    width: 50%;
+    height: 26rem;
 }
 
-.selector{
-	border: 1px solid red;
-	height: 38px;
-	border-radius: 0px 5px 0px 5px;
+.selector {
+    border: 1px solid red;
+    height: 38px;
+    border-radius: 0px 5px 0px 5px;
 }
 
+.titulo {
+    margin-left: 1rem;
+    color: #6d0505;
+    font-weight: bold;
+}
 
+.cajaPasos {
+    padding: 1rem;
+    border: 1px #6d0505 solid;
+    border-radius: 0px 50px 0px 50px;
 
-.formPaso {
+}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+h4 {
+    color: #6d0505;
+    font-weight: bold;
+}
+
+.colorRojo {
+    color: red;
+}
+
+.selector option[disabled] {
+    display: none;
 }

@@ -36,50 +36,115 @@
 
     <main>
 
-        <div class="text-center tamano d-flex justify-content-center container">
+        <h1 class="titulo">SUMATE</h1>
+
+
+        <!--PASO 1-->
+        <div class="cajaPasos text-center tamano d-flex justify-content-center container">
             <form class="row justify-content-center">
-                <div class="titulo mb-4">
-                    <h2>PASO 1</h2>
+                <div class="tituloPaso mb-4">
+                    <h2>REGISTRO</h2>
                 </div>
                 <div class="col-6 mb-4">
-                    <label for="nombre" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre">
                 </div>
                 <div class="col-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="inputApellido">
                 </div>
                 <div class="col-12 mb-4">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="inputEmail">
                 </div>
                 <div class="col-6 mb-4">
-                    <label for="inputPassword4" class="form-label">Documento de Identidad</label>
-                <div class="input-group">
-                    <select class="selector col-2" id="tipo" name="tipo" title="Tipo">
-                        <option value="dni">DNI</option>
-                        <option value="pasaporte">Pasaporte</option>
-                    </select>
-                    <input class="form-control" type="text" id="numeroDNI" name="NumeroDNI" value="" maxlength="8">
-                </div>
+                    <label for="DNI" class="form-label">Documento de Identidad</label>
+                    <div class="input-group">
+                        <select class="selector col-3" id="tipoDNI" name="tipoDNI" title="Tipo DNI">
+                            <option value="dni">DNI</option>
+                            <option value="pasaporte">Pasaporte</option>
+                        </select>
+                        <input class="form-control" type="number" id="numeroDNI" name="NumeroDNI" value=""
+                            maxlength="8">
+                    </div>
                 </div>
                 <div class="col-6">
-                    <label for="inputPassword4" class="form-label">Género</label>
-                    <select class="col-12 selector" id="tipo" name="tipo" title="Tipo">
+                    <label for="genero" class="form-label">Género</label>
+                    <select class="col-12 selector" id="tipoGenero" name="tipoGenero" title="Tipo Genero">
                         <option value="seleccione" selected>--Seleccione género--</option>
-                        <option value="masculino" >Masculino</option>
+                        <option value="masculino">Masculino</option>
                         <option value="femenino">Femenino</option>
                         <option value="otro">No-Binario</option>
                     </select>
                 </div>
-        </div>
-        </form>
+            </form>
         </div>
 
+        <!--PASO 2-->
+
+        <div class="cajaPasos text-center tamano d-flex justify-content-center container">
+            <form class="row justify-content-center">
+                <div class="tituloPaso mb-4">
+                    <h2>ELEGI EL PLAN</h2>
+                </div>
+                <div class="col-6 mb-4">
+                    <label for="sucursal" class="form-label">Elegir sucursal</label>
+                    <select class="col-12 selector" id="tipoSucursal" name="tipoSucursal" title="Tipo Sucursal">
+                        <option value="seleccione" selected>--Seleccione sucursal--</option>
+                        <option value="cordoba">Córdoba</option>
+                        <option value="caba">CABA</option>
+                        <option value="lomas">Lomas de Zamora</option>
+                        <option value="mendoza">Mendoza</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="plan" class="form-label">Elegir plan (ANUAL)</label>
+                    <select class="col-12 selector" id="tipoPlan" name="tipoPlan" title="Tipo Plan">
+                        <option value="seleccione" selected>--Seleccione plan--</option>
+                        <option value="plan1" disabled>Gimnasio LIBRE -> $40.000</option>
+                        <option value="plan2" disabled>Yoga (1 clase/Semana) -> $47.000 </option>
+                        <option value="plan3" disabled>Aero Combat (1 clase/Semana) -> $60.000</option>
+                        <option value="plan4" disabled>Fit 30' LIBRE -> $37.500</option>
+                        <option value="plan5" disabled>Natación (3 clases/Semana) -> $69.000</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <!--PASO 3-->
+
+        <div class="cajaPasos text-center tamano d-flex justify-content-center container">
+            <form class="row justify-content-center">
+                <div class="tituloPaso mb-4">
+                    <h2>DATOS DE CONTACTO</h2>
+                </div>
+                <div class="col-8 mb-4">
+                    <label for="telefono" class="form-label">N° de teléfono</label>
+                    <div class="input-group">
+                        <div class="form-control">+54</div>
+                        <input type="tel" class="form-control" id="inputTelefono">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="inputApellido">
+                </div>
+            </form>
+        </div>
+
+
     </main>
-    <footer>
-        <!-- place footer here -->
+
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p>Derechos reservados por @GIMBROS</p>
+        </div>
     </footer>
+
+
+    <script src="form-proceso.js"></script>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
