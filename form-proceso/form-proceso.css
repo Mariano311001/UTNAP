@@ -112,12 +112,12 @@ h2 {
 
 }
 
+/*Quitar flechas del input number*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -133,4 +133,26 @@ h4 {
 
 .selector option[disabled] {
     display: none;
+}
+
+.codigoArea{
+    display: flex;
+    width: 15%;
+}
+
+.bordeCodigo {
+    border-radius: 0px 0px 0px 5px;
+}
+
+h5 {
+    color: #6d0505;
+    font-weight: bold;
+}
+
+#selectProvincias {
+    max-width: 100%;
+}
+
+#selectLocalidad {
+    max-width: 100%;
 }

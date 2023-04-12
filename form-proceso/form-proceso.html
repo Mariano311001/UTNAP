@@ -64,8 +64,7 @@
                             <option value="dni">DNI</option>
                             <option value="pasaporte">Pasaporte</option>
                         </select>
-                        <input class="form-control" type="number" id="numeroDNI" name="NumeroDNI" value=""
-                            maxlength="8">
+                        <input class="form-control" type="number" id="numeroDNI" name="NumeroDNI" value="">
                     </div>
                 </div>
                 <div class="col-6">
@@ -118,16 +117,49 @@
                 <div class="tituloPaso mb-4">
                     <h2>DATOS DE CONTACTO</h2>
                 </div>
-                <div class="col-8 mb-4">
+                <div class="mb-4 col-8">
                     <label for="telefono" class="form-label">N° de teléfono</label>
                     <div class="input-group">
-                        <div class="form-control">+54</div>
+                        <div class="codigoArea"><label for="telefono" class="form-control bordeCodigo">+54</label></div>
                         <input type="tel" class="form-control" id="inputTelefono">
                     </div>
                 </div>
                 <div class="col-4">
                     <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
                     <input type="date" class="form-control" id="inputApellido">
+                </div>
+                <h5>Dirección:</h5>
+                <div class="col-5">
+                    <label for="calle" class="form-label">Calle</label>
+                    <input type="text" class="form-control" id="inputCalle">
+                </div>
+                <div class="col-2">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="inputNumero">
+                </div>
+                <div class="col-2">
+                    <label for="piso" class="form-label">Piso</label>
+                    <input type="number" class="form-control" id="inputPiso">
+                </div>
+                <div class="col-2">
+                    <label for="departamento" class="form-label">Depto.</label>
+                    <input type="text" class="form-control" id="inputDepto">
+                </div>
+                <div class="col-4 mb-4">
+                    <label for="provincias" class="form-label">Provincias</label>
+                    <select name="Seleccione Provincia" id="selectProvincias" class="selector">
+                        <option value="--Seleccione Provincia--" >--Seleccione Provincia--</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="localidad" class="form-label">Localidad</label>
+                    <select name="Seleccione Localidad" class="selector" id="selectLocalidad">
+                        <option value="--Seleccione Localidad--" >--Seleccione Localidad--</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="cp" class="form-label">Código Postal</label>
+                    <input type="text" class="form-control" id="inputCP">
                 </div>
             </form>
         </div>

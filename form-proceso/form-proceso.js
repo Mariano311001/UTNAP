@@ -59,3 +59,67 @@ selectSucursal.addEventListener("change", function () {
 
     }
 });
+
+
+// API PROVINCIAS Y LOCALIDADES ARGENTINAS
+
+
+const selectProvincias = document.getElementById("selectProvincias")
+const selectLocalidad = document.getElementById("selectLocalidad")
+
+function provincia() {
+
+    fetch("https://apis.datos.gob.ar/georef/api/provincias") //Llamo a la API
+        .then(res => res.ok ? res.json() : Promise.reject(res)) //Si es true, convertir los resultados a formato json. Sino, rechazar
+        .then(json => {
+            console.log(json)
+
+            const provincias = json.provincias;
+
+            // Ordenar las provincias alfabéticamente
+            provincias.sort(function(a, b) {
+              return a.nombre.localeCompare(b.nombre);
+            });
+
+            let opciones = `<option value="--Seleccione Provincia--">--Seleccione Provincia--</option>`;
+
+            json.provincias.forEach(element => {
+                opciones += `<option value="${element.nombre}">${element.nombre}</option>`
+            });
+
+            selectProvincias.innerHTML = opciones;
+        })
+}
+
+document.addEventListener("DOMContentLoaded", provincia) //Ejecutar la funcion cuando termine de cargar el DOM 
+
+
+function localidad(provincia) {
+    fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincia}&max=5000`)
+        .then(res => res.ok ? res.json() : Promise.reject(res))
+        .then(json => {
+            console.log(json)
+
+            const localidades = json.localidades;
+
+            // Ordenar las localidades alfabéticamente
+            localidades.sort(function(a, b) {
+              return a.nombre.localeCompare(b.nombre);
+            });
+
+
+            let opciones = `<option value="--Seleccione Localidad--">--Seleccione Localidad--</option>`;
+
+            json.localidades.forEach(element => {
+
+                opciones += `<option value="${element.id}">${element.nombre}</option>`
+            });
+
+            selectLocalidad.innerHTML = opciones;
+        })
+}
+
+selectProvincias.addEventListener("change", e => {
+    localidad(e.target.value);
+})
+
