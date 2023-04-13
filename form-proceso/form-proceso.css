@@ -64,10 +64,10 @@
     text-align: center;
     color: #fafafa;
     margin-top: 6rem;
-    position: flex;
     width: 100%;
     bottom: 0;
     padding: 4rem;
+    position: bottom;
 }
 
 
@@ -107,9 +107,9 @@ h2 {
 
 .cajaPasos {
     padding: 1rem;
-    border: 1px #6d0505 solid;
+    border: 2px #6d0505 solid;
     border-radius: 0px 50px 0px 50px;
-
+    box-shadow:  10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 /*Quitar flechas del input number*/
@@ -155,4 +155,61 @@ h5 {
 
 #selectLocalidad {
     max-width: 100%;
+}
+
+h3 {
+    color: #6d0505;
+    font-weight: bold;
+}
+
+.confirmacion {
+    font-weight: none;
+}
+
+.progress {
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flechas {
+    font-size: 2.5rem;
+    background-color: #fff;
+    border: none;
+    padding: none;
+    margin: none;   
+}
+
+.paso {
+    display: none;
+}
+
+#paso1 {
+    display: block;
+}
+
+.botonConfirmar {
+    width: 50%;
+}
+
+h1 {
+    color: #6d0505;
+    font-weight: bold;
+}
+
+h6 {
+    color: #6d0505;
+    font-weight: bold;
+}
+
+.gracias {
+    display: none;
+}
+
+#gracias {
+    text-align: center;
+}
+
+.error {
+    color: red;
 }
