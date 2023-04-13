@@ -18,21 +18,62 @@
 
 </head>
 
-<body class="root">
+<body>
 
-    <header class="header">
-        <div class="container-header logo-nav-container-header">
-            <a href="#" class="logo-header">GIMBROS</a>
-            <span class="menu-icon">Ver menú</span>
-            <nav class="navigation">
-                <ul class="show">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sumate</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Quienes somos</a></li>
-                </ul>
+    <header class="bg-white">
+            <!--Inicio del menu-->
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <!--icono-->
+                    <a href="#" class="navbar-brand">
+                        <i class="bi bi-gem"></i>
+                        <span class="text-warning">GIMBROS</span>
+                    </a>
+                    <!--boton del menu-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!--elementos del menu colapsable-->
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Presentación</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sumate</a>
+                            </li>
+                        </ul>
+        
+                        <!--Redes sociales-->
+                        <ul class="navbar-nav flex-row flex-wrap text-light">
+                            <li class="nav-item col-6 col-md-auto p-3">
+                                <a class="text-white" href="https://twitter.com/home"><i class="bi bi-twitter"></i></a>
+                                <small class="d-md-none ms-2">twitter</small>
+                            </li>
+                            <li class="nav-item col-6 col-md-auto p-3">
+                                <a class="text-white" href="https://web.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+                                <small class="d-md-none ms-2">whatsapp</small>
+                            </li>
+                            <li class="nav-item col-6 col-md-auto p-3">
+                                <a class="text-white" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                                <small class="d-md-none ms-2">facebook</small>
+                            </li>
+                            <li class="nav-item col-6 col-md-auto p-3">
+                                <a class="text-white" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                                <small class="d-md-none ms-2">instagram</small>
+                            </li>
+                        </ul>
+        
+                    </div>
+                </div>
             </nav>
-        </div>
     </header>
 
     <main>
@@ -297,9 +338,11 @@
     </main>
 
 
-    <footer class="footer">
-        <div class="container-footer">
-            <p>Derechos reservados por @GIMBROS</p>
+    <!--FOOTER-->
+    <footer class="mt-5">
+        <div class="container-fluid bg-dark p-4">
+            <p class="text-white text-center">Derechos reservados @GIMBROS</p>
+
         </div>
     </footer>
 
