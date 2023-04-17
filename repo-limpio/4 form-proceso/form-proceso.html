@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title id="sumate">SUMATE</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="form-proceso.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <!--FONT AWESOME-->
+    <script
+      src="https://kit.fontawesome.com/707464f25e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="bg-white">
+        <!--Inicio del menu-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div class="container-fluid">
+            <!--icono-->
+            <a href="#" class="navbar-brand">
+              <i class="bi bi-gem"></i>
+              <span class="text-warning">GIMBROS</span>
+            </a>
+            <!--boton del menu-->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menu"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <!--elementos del menu colapsable-->
+            <div class="collapse navbar-collapse" id="menu">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../2 pres-personal/index.html"
+                    >Presentación</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../3 form-contacto/form-contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../4 form-proceso/form-proceso.html"
+                    >Sumate</a
+                  >
+                </li>
+              </ul>
+  
+              <!--Redes sociales-->
+              <ul class="navbar-nav flex-row flex-wrap text-light">
+                <li class="nav-item col-6 col-md-auto p-3">
+                  <a class="text-white" href="https://twitter.com/home"
+                    ><i class="bi bi-twitter"></i
+                  ></a>
+                  <small class="d-md-none ms-2">twitter</small>
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                  <a class="text-white" href="https://web.whatsapp.com/"
+                    ><i class="bi bi-whatsapp"></i
+                  ></a>
+                  <small class="d-md-none ms-2">whatsapp</small>
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                  <a class="text-white" href="https://www.facebook.com/"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <small class="d-md-none ms-2">facebook</small>
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                  <a class="text-white" href="https://www.instagram.com/"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <small class="d-md-none ms-2">instagram</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <main>
+      <h1 class="titulo">SUMATE</h1>
+
+      <!--PASO 1-->
+      <div id="paso1" class="paso">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 20%"
+            >
+              1/5
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="cajaPasos text-center tamano d-flex justify-content-center container"
+        >
+          <form class="row justify-content-center">
+            <div class="tituloPaso">
+              <h2>REGISTRO</h2>
+            </div>
+
+            <div class="col-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputNombre"
+                placeholder="Ingrese nombre"
+              />
+              <div id="errorNombre" class="error"></div>
+            </div>
+            <div class="col-6">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputApellido"
+                placeholder="Ingrese apellido"
+              />
+              <div id="errorApellido" class="error"></div>
+            </div>
+            <div class="col-12">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Ingrese correo electrónico"
+              />
+              <div id="errorEmail" class="error"></div>
+            </div>
+            <div class="col-6">
+              <label for="DNI" class="form-label">Documento de Identidad</label>
+              <div class="input-group">
+                <select
+                  class="selector col-3"
+                  id="tipoDNI"
+                  name="tipoDNI"
+                  title="Tipo DNI"
+                >
+                  <option value="dni">DNI</option>
+                  <option value="pasaporte">Pasaporte</option>
+                </select>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="numeroDoc"
+                  name="Numero Documento"
+                  value=""
+                  placeholder="Ingrese n° de documento"
+                />
+                <div id="errorDNI" class="error"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="genero" class="form-label">Género</label>
+              <select
+                class="col-12 selector"
+                id="tipoGenero"
+                name="tipoGenero"
+                title="Tipo Genero"
+              >
+                <option value="seleccione" selected>
+                  --Seleccione género--
+                </option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">No-Binario</option>
+              </select>
+              <div id="errorGenero" class="error"></div>
+            </div>
+            <button
+              type="button"
+              id="siguiente"
+              class="col-1 bi bi-arrow-right-square-fill flechas"
+              onclick="checkPaso1()"
+            ></button>
+          </form>
+        </div>
+      </div>
+
+      <!--PASO 2-->
+      <div id="paso2" class="paso">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 40%"
+            >
+              2/5
+            </div>
+          </div>
+        </div>
+        <div
+          class="cajaPasos text-center tamano d-flex justify-content-center container"
+        >
+          <form class="row justify-content-center">
+            <div class="tituloPaso mb-4">
+              <h2>ELEGI EL PLAN</h2>
+            </div>
+            <div class="col-6">
+              <label for="sucursal" class="form-label">Elegir sucursal</label>
+              <select
+                class="col-12 selector"
+                id="tipoSucursal"
+                name="tipoSucursal"
+                title="Tipo Sucursal"
+              >
+                <option value="seleccione" selected>
+                  --Seleccione sucursal--
+                </option>
+                <option value="cordoba">Córdoba</option>
+                <option value="caba">CABA</option>
+                <option value="lomas">Lomas de Zamora</option>
+                <option value="mendoza">Mendoza</option>
+              </select>
+              <div id="errorSucursal" class="error"></div>
+            </div>
+            <div class="col-6">
+              <label for="plan" class="form-label">Elegir plan (ANUAL)</label>
+              <select
+                class="col-12 selector"
+                id="tipoPlan"
+                name="tipoPlan"
+                title="Tipo Plan"
+              >
+                <option value="seleccione" selected>--Seleccione plan--</option>
+                <option value="plan1" disabled>
+                  Gimnasio LIBRE -> $40.000
+                </option>
+                <option value="plan2" disabled>
+                  Yoga (1 clase/Semana) -> $47.000
+                </option>
+                <option value="plan3" disabled>
+                  Aero Combat (1 clase/Semana) -> $60.000
+                </option>
+                <option value="plan4" disabled>Fit 30' LIBRE -> $37.500</option>
+                <option value="plan5" disabled>
+                  Natación (3 clases/Semana) -> $69.000
+                </option>
+              </select>
+              <div id="errorPlan" class="error"></div>
+            </div>
+            <button
+              type="button"
+              id="atras"
+              class="col-2 bi bi-arrow-left-square-fill flechas"
+              onclick="mostrarPaso1()"
+            ></button>
+            <button
+              type="button"
+              id="siguiente"
+              class="col-2 bi bi-arrow-right-square-fill flechas"
+              onclick="checkPaso2()"
+            ></button>
+          </form>
+        </div>
+      </div>
+      <!--PASO 3-->
+      <div id="paso3" class="paso">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 60%"
+            >
+              3/5
+            </div>
+          </div>
+        </div>
+        <div
+          class="cajaPasos text-center tamano d-flex justify-content-center container"
+        >
+          <form class="row justify-content-center">
+            <div class="tituloPaso">
+              <h2>DATOS DE CONTACTO</h2>
+            </div>
+            <div class="col-8">
+              <label for="telefono" class="form-label">N° de teléfono</label>
+              <div class="input-group">
+                <div class="codigoArea">
+                  <label for="telefono" class="form-control bordeCodigo"
+                    >+54</label
+                  >
+                </div>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="inputTelefono"
+                  placeholder="Ingrese n° de telefono"
+                />
+                <div id="errorTelefono" class="error"></div>
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="nacimiento" class="form-label"
+                >Fecha de nacimiento</label
+              >
+              <input type="date" class="form-control" id="inputNacimiento" />
+              <div id="errorNacimiento" class="error"></div>
+            </div>
+            <h5>Dirección:</h5>
+            <div class="col-5">
+              <label for="calle" class="form-label">Calle</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCalle"
+                placeholder="Ingrese nombre de calle"
+              />
+              <div id="errorCalle" class="error"></div>
+            </div>
+            <div class="col-2">
+              <label for="numero" class="form-label">Número</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputNumero"
+                placeholder="N° de calle"
+              />
+              <div id="errorNumeroCalle" class="error"></div>
+            </div>
+            <div class="col-2">
+              <label for="piso" class="form-label">Piso</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputPiso"
+                placeholder="Piso"
+              />
+            </div>
+            <div class="col-2">
+              <label for="departamento" class="form-label">Depto.</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputDepto"
+                placeholder="Depto."
+              />
+            </div>
+            <div class="col-4">
+              <label for="provincias" class="form-label">Provincias</label>
+              <select
+                name="Seleccione Provincia"
+                id="selectProvincias"
+                class="selector"
+              >
+                <option value="--Seleccione Provincia--">
+                  --Seleccione Provincia--
+                </option>
+              </select>
+              <div id="errorProvincias" class="error"></div>
+            </div>
+            <div class="col-4">
+              <label for="localidad" class="form-label">Localidad</label>
+              <select
+                name="Seleccione Localidad"
+                class="selector"
+                id="selectLocalidad"
+              >
+                <option value="--Seleccione Localidad--">
+                  --Seleccione Localidad--
+                </option>
+              </select>
+              <div id="errorLocalidad" class="error"></div>
+            </div>
+            <div class="col-3">
+              <label for="cp" class="form-label">Código Postal</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCP"
+                placeholder="Ingrese CP"
+              />
+              <div id="errorCP" class="error"></div>
+            </div>
+            <button
+              type="button"
+              id="atras"
+              class="col-2 bi bi-arrow-left-square-fill flechas"
+              onclick="mostrarPaso2()"
+            ></button>
+            <button
+              type="button"
+              id="siguiente"
+              class="col-2 bi bi-arrow-right-square-fill flechas"
+              onclick="checkPaso3()"
+            ></button>
+          </form>
+        </div>
+      </div>
+      <!--PASO 4-->
+      <div id="paso4" class="paso">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 80%"
+            >
+              4/5
+            </div>
+          </div>
+        </div>
+        <div
+          class="cajaPasos text-center tamano d-flex justify-content-center container"
+        >
+          <form class="row justify-content-center">
+            <div class="tituloPaso">
+              <h2>DATOS DE FACTURACION</h2>
+            </div>
+            <div class="col-7">
+              <label for="tarjeta" class="form-label"
+                >Tarjeta de Crédito/Débito</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputTarjeta"
+                oninput="agregarGuion()"
+                placeholder="XXXX-XXXX-XXXX-XXXX"
+                maxlength="19"
+              />
+              <div id="errorTarjeta" class="error"></div>
+            </div>
+            <div class="col-4">
+              <label for="vencimiento" class="form-label">Vencimiento</label>
+              <input type="month" class="form-control" id="inputVencimiento" />
+              <div id="errorVencimiento" class="error"></div>
+            </div>
+            <div class="col-2">
+              <label for="CVV" class="form-label">CVV</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCVV"
+                placeholder="XXX"
+              />
+              <div id="errorCVV" class="error"></div>
+            </div>
+            <div class="col-11">
+              <label for="titular" class="form-label"
+                >Nombre y apellido del titular</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputTitular"
+                placeholder="Ingrese nombre y apellido"
+              />
+              <div id="errorTitular" class="error"></div>
+            </div>
+            <button
+              type="button"
+              id="atras"
+              class="col-2 bi bi-arrow-left-square-fill flechas"
+              onclick="mostrarPaso3()"
+            ></button>
+            <button
+              type="button"
+              id="siguiente"
+              class="col-2 bi bi-arrow-right-square-fill flechas"
+              onclick="checkPaso4()"
+            ></button>
+            <h4 id="tarjetaRechazada"></h4>
+          </form>
+        </div>
+      </div>
+      <!--PASO 5-->
+      <div id="paso5" class="paso">
+        <div class="d-flex justify-content-center mb-4">
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 100%"
+            >
+              5/5
+            </div>
+          </div>
+        </div>
+        <div
+          class="cajaPasos text-center tamano d-flex justify-content-center container"
+        >
+          <form class="row justify-content-center">
+            <div class="tituloPaso">
+              <h2>CONFIRMAR</h2>
+            </div>
+            <h5 id="confirmarNyA"></h5>
+            <h5 id="confirmarEmail"></h5>
+            <h5 id="confirmarTipoDocu"></h5>
+            <h5 id="confirmarSucursalYPlan"></h5>
+            <h3 id="precioTotal"></h3>
+
+            <button
+              type="button"
+              id="atras"
+              class="col-12 bi bi-arrow-left-square-fill flechas"
+              onclick="mostrarPaso4()"
+            ></button>
+            <button
+              type="button"
+              class="col-12 btn btn-outline-danger botonConfirmar"
+              onclick="mostrarGracias()"
+            >
+              Confirmar
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!--GRACIAS-->
+
+      <div class="gracias flex justify-content-center" id="gracias">
+        <h1>GRACIAS</h1>
+        <br />
+        <h6>Tus datos han sido cargados con éxito.</h6>
+      </div>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="mt-5">
+      <div class="container-fluid bg-dark p-4">
+        <p class="text-white text-center">Derechos reservados @GIMBROS</p>
+      </div>
+    </footer>
+
+    <script src="form-proceso.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
