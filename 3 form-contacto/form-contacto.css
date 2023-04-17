@@ -69,3 +69,9 @@
 textarea {
     resize: none !important;
 }
+
+/*api map*/
+#map {
+	height: 250px;
+	width: 500px;
+}
