@@ -72,7 +72,6 @@ function provincia() {
     fetch("https://apis.datos.gob.ar/georef/api/provincias") //Llamo a la API
         .then(res => res.ok ? res.json() : Promise.reject(res)) //Si es true, convertir los resultados a formato json. Sino, rechazar
         .then(json => {
-            console.log(json)
 
             const provincias = json.provincias;
 
@@ -98,7 +97,6 @@ function localidad(provincia) {
     fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincia}&max=5000`)
         .then(res => res.ok ? res.json() : Promise.reject(res))
         .then(json => {
-            console.log(json)
 
             const localidades = json.localidades;
 
@@ -123,18 +121,6 @@ selectProvincias.addEventListener("change", e => {
     localidad(e.target.value);
 })
 
-function agregarGuion() {
-    nroTarjeta = document.getElementById("inputTarjeta").value
-
-    if (nroTarjeta.length == 4 || nroTarjeta.length == 9 ||
-        nroTarjeta.length == 14) {
-        nroTarjeta += "-";
-        document.getElementById("inputTarjeta").value = nroTarjeta;
-    }
-
-}
-
-
 //CONFIRMACION
 
 function confirmar() {
@@ -145,6 +131,7 @@ function confirmar() {
     email = document.getElementById("inputEmail").value
     tipoDocu = document.getElementById("tipoDNI").value
     numeroDoc = document.getElementById("numeroDoc").value
+    nacimientoStr = document.getElementById("inputNacimiento").value
     sucursal = document.getElementById("tipoSucursal").value
     plan = document.getElementById("tipoPlan").value
 
@@ -198,10 +185,20 @@ function confirmar() {
             break;
     }
 
+    let nacimiento = new Date(nacimientoStr);
+    let hoy = new Date("2023-04-18")
+
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+
+    if ((nacimiento.getMonth() > hoy.getMonth()) || (nacimiento.getMonth() === hoy.getMonth() && nacimiento.getDate() > hoy.getDate())) {
+        edad -= 1;
+    }
+
 
     document.getElementById("confirmarNyA").innerHTML = "Nombre y Apellido: " + nombre + " " + apellido;
     document.getElementById("confirmarEmail").innerHTML = "Correo Electrónico: " + email;
     document.getElementById("confirmarTipoDocu").innerHTML = tipoDocu + ": " + numeroDoc;
+    document.getElementById("confirmarEdad").innerHTML = "Edad: " + edad;
     document.getElementById("confirmarSucursalYPlan").innerHTML = "Sucursal: " + sucursal + " Plan: " + plan;
     document.getElementById("precioTotal").innerHTML = "PRECIO TOTAL: $" + precioTotal;
 
@@ -223,6 +220,12 @@ numeroDoc = document.getElementById("numeroDoc").value
 sucursal = document.getElementById("tipoSucursal").value
 plan = document.getElementById("tipoPlan").value
 
+const soloLetras = /^[a-zA-Z]+$/;
+const soloTitular = /^[a-zA-Z\s.]+$/;
+const paraEmail = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+const soloNumeros = /^[0-9]+$/;
+const telefonoArg = /^11\d{8}$/;
+const nombreCalle = /^[a-zA-Z0-9\s]+$/;
 
 function mostrarPaso1() {
     paso1.style.display = "block";
@@ -255,24 +258,45 @@ function checkPaso1() {
     }
     errorNombre.innerHTML = "";
 
+    if (!soloLetras.test(nombre)) {
+        document.getElementById("errorNombre").innerHTML = "*Ingrese un nombre válido";
+        return;
+    }
+
+
     if (apellido === "") {
         document.getElementById("errorApellido").innerHTML = "*Ingrese su apellido";
         return;
     }
     errorApellido.innerHTML = "";
 
+    if (!soloLetras.test(apellido)) {
+        document.getElementById("errorApellido").innerHTML = "*Ingrese un apellido válido";
+        return;
+    }
+    errorApellido.innerHTML = "";
+
+
     if (email === "") {
         document.getElementById("errorEmail").innerHTML = "*Ingrese su correo electrónico";
         return;
     }
-    if (email.indexOf("@") == -1) { //indexOf busca @, si no la encuentra devuelve -1
-        errorEmail.innerHTML = "*Ingrese un correo electrónico válido";
+    errorEmail.innerHTML = "";
+
+    if (!paraEmail.test(email)) {
+        document.getElementById("errorEmail").innerHTML = "*Ingrese un E-mail válido";
         return;
     }
     errorEmail.innerHTML = "";
 
-    if (numeroDoc === "") {
+    if (numeroDoc == "") {
         document.getElementById("errorDNI").innerHTML = "*Ingrese su número de documento";
+        return;
+    }
+    errorDNI.innerHTML = "";
+
+    if (!soloNumeros.test(numeroDoc) || numeroDoc > 999999999 || numeroDoc < 99999) {
+        document.getElementById("errorDNI").innerHTML = "*Ingrese un número válido";
         return;
     }
     errorDNI.innerHTML = "";
@@ -333,8 +357,15 @@ function checkPaso3() {
     let localidad = document.getElementById("selectLocalidad").value;
     let cp = document.getElementById("inputCP").value.trim();
 
+
     if (telefono === "") {
-        document.getElementById("errorTelefono").innerHTML = "*Ingrese un teléfono válido";
+        document.getElementById("errorTelefono").innerHTML = "*Ingrese un número de teléfono";
+        return;
+    }
+    errorTelefono.innerHTML = "";
+
+    if (!telefonoArg.test(telefono)) {
+        document.getElementById("errorTelefono").innerHTML = "*Ingrese un número válido";
         return;
     }
     errorTelefono.innerHTML = "";
@@ -345,8 +376,20 @@ function checkPaso3() {
     }
     errorNacimiento.innerHTML = "";
 
+    if (nacimiento > "2023-04-18") {
+        document.getElementById("errorNacimiento").innerHTML = "*Ingrese una fecha válida";
+        return;
+    }
+    errorNacimiento.innerHTML = "";
+
     if (calle === "") {
         document.getElementById("errorCalle").innerHTML = "*Ingrese la calle";
+        return;
+    }
+    errorCalle.innerHTML = "";
+
+    if (!nombreCalle.test(calle)) {
+        document.getElementById("errorCalle").innerHTML = "*Ingrese una calle válida";
         return;
     }
     errorCalle.innerHTML = "";
@@ -356,6 +399,12 @@ function checkPaso3() {
         return;
     }
     errorNumeroCalle.innerHTML = "";
+
+    if (!soloNumeros.test(numeroCalle)) {
+        document.getElementById("errorNumeroCalle").innerHTML = "*Ingrese un número válido";
+        return;
+    }
+    errorDNI.innerHTML = "";
 
     if (provincia === "--Seleccione Provincia--") {
         document.getElementById("errorProvincias").innerHTML = "*Seleccione una provincia";
@@ -371,6 +420,12 @@ function checkPaso3() {
 
     if (cp === "") {
         document.getElementById("errorCP").innerHTML = "*Ingrese código postal";
+        return;
+    }
+    errorCP.innerHTML = "";
+
+    if (!soloNumeros.test(cp)) {
+        document.getElementById("errorCP").innerHTML = "*Ingrese un número válido";
         return;
     }
     errorCP.innerHTML = "";
@@ -392,10 +447,16 @@ function checkPaso4() {
     let tarjeta = document.getElementById("inputTarjeta").value.trim();
     let vencimiento = document.getElementById("inputVencimiento").value;
     let cvv = document.getElementById("inputCVV").value.trim();
-    let titular = document.getElementById("inputTitular").value.trim();
+    let titular = document.getElementById("inputTitular").value;
 
-    if (tarjeta === "" | tarjeta.length < 19) {
+    if (tarjeta === "" | tarjeta.length < 16) {
         document.getElementById("errorTarjeta").innerHTML = "*Ingrese n° de tarjeta";
+        return;
+    }
+    errorTarjeta.innerHTML = "";
+
+    if (!soloNumeros.test(tarjeta)) {
+        document.getElementById("errorTarjeta").innerHTML = "*Ingrese un número válido";
         return;
     }
     errorTarjeta.innerHTML = "";
@@ -406,14 +467,32 @@ function checkPaso4() {
     }
     errorVencimiento.innerHTML = "";
 
+    if (vencimiento < "2023-04") {
+        document.getElementById("errorVencimiento").innerHTML = "*Tarjeta vencida";
+        return;
+    }
+    errorVencimiento.innerHTML = "";
+
     if (cvv === "") {
         document.getElementById("errorCVV").innerHTML = "*Ingrese CVV";
         return;
     }
     errorCVV.innerHTML = "";
 
+    if (!soloNumeros.test(cvv) || cvv < 100) {
+        document.getElementById("errorCVV").innerHTML = "*Ingrese un número válido";
+        return;
+    }
+    errorCVV.innerHTML = "";
+
     if (titular === "") {
         document.getElementById("errorTitular").innerHTML = "*Ingrese nombre y apellido del titular";
+        return;
+    }
+    errorTitular.innerHTML = "";
+
+    if (!soloTitular.test(titular)) {
+        document.getElementById("errorTitular").innerHTML = "*Ingrese un nombre y/o apellido válido";
         return;
     }
     errorTitular.innerHTML = "";
@@ -430,3 +509,4 @@ function mostrarPaso5() {
 
     confirmar()
 }
+

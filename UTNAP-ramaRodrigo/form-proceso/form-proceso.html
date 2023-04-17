@@ -101,7 +101,7 @@
 
                     <div class="col-6 ">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese nombre">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese nombre" pattern="^[a-zA-Z]+$">
                         <div id="errorNombre" class="error"></div>
                     </div>
                     <div class="col-6">
@@ -212,7 +212,7 @@
                     </div>
                     <div class="col-4">
                         <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="inputNacimiento">
+                        <input type="date" class="form-control" id="inputNacimiento" max="2023-04-18">
                         <div id="errorNacimiento" class="error"></div>
                     </div>
                     <h5>Dirección:</h5>
@@ -275,18 +275,17 @@
                     </div>
                     <div class="col-7">
                         <label for="tarjeta" class="form-label">Tarjeta de Crédito/Débito</label>
-                        <input type="text" class="form-control" id="inputTarjeta" oninput="agregarGuion()"
-                            placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+                        <input type="text" class="form-control" id="inputTarjeta" placeholder="XXXXXXXXXXXXXXXX" maxlength="16">
                         <div id="errorTarjeta" class="error"></div>
                     </div>
                     <div class="col-4">
                         <label for="vencimiento" class="form-label">Vencimiento</label>
-                        <input type="month" class="form-control" id="inputVencimiento">
+                        <input type="month" class="form-control" id="inputVencimiento" min="2023-04">
                         <div id="errorVencimiento" class="error"></div>
                     </div>
                     <div class="col-2">
                         <label for="CVV" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="inputCVV" placeholder="XXX">
+                        <input type="password" class="form-control" id="inputCVV" placeholder="XXX" maxlength="3">
                         <div id="errorCVV" class="error"></div>
                     </div>
                     <div class="col-11">
@@ -299,7 +298,6 @@
                         onclick="mostrarPaso3()"></button>
                     <button type="button" id="siguiente" class="col-2 bi bi-arrow-right-square-fill flechas"
                         onclick="checkPaso4()"></button>
-                    <h4 id="tarjetaRechazada"></h4>
                 </form>
             </div>
         </div>
@@ -319,10 +317,11 @@
                     <h5 id="confirmarNyA"></h5>
                     <h5 id="confirmarEmail"></h5>
                     <h5 id="confirmarTipoDocu"></h5>
+                    <h5 id="confirmarEdad"></h5>
                     <h5 id="confirmarSucursalYPlan"></h5>
                     <h3 id="precioTotal"></h3>
 
-                    <button type="button" id="atras" class="col-12 bi bi-arrow-left-square-fill flechas"
+                    <button type="button" id="atras" class="col-7 bi bi-arrow-left-square-fill flechas"
                         onclick="mostrarPaso4()"></button>
                     <button type="button" class="col-12 btn btn-outline-danger botonConfirmar"
                         onclick="mostrarGracias()">Confirmar</button>
