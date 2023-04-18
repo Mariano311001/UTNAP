@@ -6,6 +6,15 @@ footer {
     width: 100%;
 }
 
+/* FONDO */
+
+body {
+    background-image: url("https://i.ibb.co/TkTs0Ps/4077-gym.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 /*FORMULARIO*/
 
@@ -16,7 +25,11 @@ h2 {
 
 .form-control {
     border: 1px solid red;
-    border-radius: 0px 5px 0px 5px;
+    border-radius: 0px 10px 0px 10px;
+}
+
+#numeroDoc {
+    border-radius: 0px 10px 0px 0px;
 }
 
 .form-label {
@@ -32,20 +45,24 @@ h2 {
 .selector {
     border: 1px solid red;
     height: 38px;
-    border-radius: 0px 5px 0px 5px;
+    border-radius: 0px 10px 0px 10px;
 }
 
 .titulo {
-    margin-left: 1rem;
     color: #6d0505;
+    font-size: 4rem;
     font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+    -webkit-text-stroke: 2px #ffffff;
 }
 
 .cajaPasos {
+    background-color: white;
     padding: 1rem;
-    border: 2px #6d0505 solid;
-    border-radius: 0px 50px 0px 50px;
-    box-shadow:  10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 1px #6d0505 solid;
+    border-radius: 5px;
+    box-shadow: 10px 10px 7px 0px rgba(70, 5, 5, 0.75);
 }
 
 /*Quitar flechas del input number*/
@@ -53,9 +70,6 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-input[type=number] {
-    -moz-appearance: textfield;
 }
 
 h4 {
@@ -71,13 +85,13 @@ h4 {
     display: none;
 }
 
-.codigoArea{
+.codigoArea {
     display: flex;
     width: 15%;
 }
 
 .bordeCodigo {
-    border-radius: 0px 0px 0px 5px;
+    border-radius: 0px 0px 0px 10px;
 }
 
 h5 {
@@ -113,7 +127,7 @@ h3 {
     background-color: #fff;
     border: none;
     padding: none;
-    margin: none;   
+    margin: none;
 }
 
 .paso {
