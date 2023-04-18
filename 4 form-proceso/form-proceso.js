@@ -137,6 +137,9 @@ function confirmar() {
 
     var precioTotal = 0;
 
+
+    
+
     switch (sucursal) {
         case "cordoba":
             sucursal = "Córdoba"
@@ -198,11 +201,10 @@ function confirmar() {
     document.getElementById("confirmarNyA").innerHTML = "Nombre y Apellido: " + nombre + " " + apellido;
     document.getElementById("confirmarEmail").innerHTML = "Correo Electrónico: " + email;
     document.getElementById("confirmarTipoDocu").innerHTML = tipoDocu + ": " + numeroDoc;
-    document.getElementById("confirmarEdad").innerHTML = "Edad: " + edad;
+    document.getElementById("confirmarEdad").innerHTML = "Edad: " + edad + " años.";
     document.getElementById("confirmarSucursalYPlan").innerHTML = "Sucursal: " + sucursal + " Plan: " + plan;
     document.getElementById("precioTotal").innerHTML = "PRECIO TOTAL: $" + precioTotal;
 
-    console.log(nombre + apellido + email + tipoDocu + numeroDoc + sucursal + plan);
 }
 
 paso1 = document.getElementById("paso1")
@@ -449,6 +451,7 @@ function checkPaso4() {
     let cvv = document.getElementById("inputCVV").value.trim();
     let titular = document.getElementById("inputTitular").value;
 
+
     if (tarjeta === "" | tarjeta.length < 16) {
         document.getElementById("errorTarjeta").innerHTML = "*Ingrese n° de tarjeta";
         return;
@@ -506,6 +509,7 @@ function mostrarPaso5() {
     paso3.style.display = "none";
     paso4.style.display = "none";
     paso5.style.display = "block";
+
 
     confirmar()
 }
