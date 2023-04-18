@@ -138,7 +138,7 @@ function confirmar() {
     var precioTotal = 0;
 
 
-    
+
 
     switch (sucursal) {
         case "cordoba":
@@ -226,8 +226,10 @@ const soloLetras = /^[a-zA-Z]+$/;
 const soloTitular = /^[a-zA-Z\s.]+$/;
 const paraEmail = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
 const soloNumeros = /^[0-9]+$/;
+const soloNumerosOpc = /^$|^[0-9]+$/
 const telefonoArg = /^11\d{8}$/;
 const nombreCalle = /^[a-zA-Z0-9\s]+$/;
+const numerosYLetras = /^[a-zA-Z0-9]+$/;
 
 function mostrarPaso1() {
     paso1.style.display = "block";
@@ -264,6 +266,7 @@ function checkPaso1() {
         document.getElementById("errorNombre").innerHTML = "*Ingrese un nombre válido";
         return;
     }
+    errorNombre.innerHTML = "";
 
 
     if (apellido === "") {
@@ -358,6 +361,8 @@ function checkPaso3() {
     let provincia = document.getElementById("selectProvincias").value;
     let localidad = document.getElementById("selectLocalidad").value;
     let cp = document.getElementById("inputCP").value.trim();
+    let piso = document.getElementById("inputPiso").value.trim();
+    let depto = document.getElementById("inputDepto").value.trim();
 
 
     if (telefono === "") {
@@ -402,11 +407,23 @@ function checkPaso3() {
     }
     errorNumeroCalle.innerHTML = "";
 
-    if (!soloNumeros.test(numeroCalle)) {
+    if (!soloNumeros.test(numeroCalle) || numeroCalle > 999999) {
         document.getElementById("errorNumeroCalle").innerHTML = "*Ingrese un número válido";
         return;
     }
-    errorDNI.innerHTML = "";
+    errorNumeroCalle.innerHTML = "";
+
+    if (piso !== "" && !soloNumeros.test(piso) || piso > 999) {
+        document.getElementById("errorPiso").innerHTML = "*Ingrese un número válido";
+        return;
+    }
+    errorPiso.innerHTML = "";
+
+    if (!numerosYLetras.test(depto) && depto !== "") {
+        document.getElementById("errorDepto").innerHTML = "*Ingrese número o letra";
+        return;
+    }
+    errorDepto.innerHTML = "";
 
     if (provincia === "--Seleccione Provincia--") {
         document.getElementById("errorProvincias").innerHTML = "*Seleccione una provincia";
@@ -442,7 +459,7 @@ function mostrarGracias() {
     paso3.style.display = "none";
     paso4.style.display = "none";
     paso5.style.display = "none";
-    gracias.style.display = "block";
+    gracias.style.display = "flex";
 }
 
 function checkPaso4() {
